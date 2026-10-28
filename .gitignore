@@ -1,0 +1,11 @@
+node_modules/
+dist/
+dist.previous/
+release/
+test-results/
+.build-staging-*/
+.env
+.env.*
+*.log
+.DS_Store
+__MACOSX/

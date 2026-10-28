@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="vi" data-theme="system">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light dark"><title>Safora</title><link rel="stylesheet" href="ui.css"></head>
+<body class="popup-page">
+  <header class="popup-header"><a class="brand" href="options.html" target="_blank" aria-label="Safora — mở cài đặt"><span class="brand-mark" aria-hidden="true"><img src="icons/safora.svg" alt="" width="40" height="40"></span><span>Safora<span class="brand-sub">PRIVACY</span></span></a><button class="icon-button" id="open-settings" title="Cài đặt" aria-label="Mở cài đặt"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 3-.6 2.2-2 .9-2-.6-2 3.5L4 10.7V13l-1.6 1.6 2 3.5 2.1-.6 2 .9.6 2.2h4l.6-2.2 2-.9 2.1.6 2-3.5-1.6-1.6v-2.3L20 9l-2-3.5-2.1.6-2-.9L13.3 3Z"/><circle cx="11.3" cy="11.8" r="3"/></svg></button></header>
+  <div id="popup-tabs" class="popup-tabs" role="tablist" aria-label="Nội dung tiện ích"><button id="protection-tab" type="button" role="tab" aria-selected="true" aria-controls="protection-panel">Bảo vệ</button><button id="statistics-tab" type="button" role="tab" aria-selected="false" aria-controls="statistics-panel" tabindex="-1">Thống kê</button></div>
+  <main>
+    <div id="protection-panel" role="tabpanel" aria-labelledby="protection-tab">
+    <section class="protection-hero" id="protection-hero" aria-labelledby="protection-title">
+      <div class="site-pill"><span class="live-dot" aria-hidden="true"></span><span id="site-host">Đang đọc trang…</span></div>
+      <div class="hero-shield" aria-hidden="true"><svg viewBox="0 0 80 88"><path class="shield-body" d="M40 3 8 16v25c0 21 32 40 32 40s32-19 32-40V16Z"/><path class="shield-check" d="m26 42 10 10 20-24"/></svg></div>
+      <h1 id="protection-title">Đang kết nối…</h1><p id="protection-description" class="hero-description">Kiểm tra trạng thái bảo vệ trang hiện tại.</p>
+      <button class="hero-toggle" id="site-toggle" role="switch" aria-checked="false" aria-label="Bảo vệ trang web này" disabled><span class="toggle-knob"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v9M6 6a8 8 0 1 0 12 0"/></svg></span></button>
+      <span class="toggle-caption" id="toggle-caption">Bảo vệ trên trang này</span>
+    </section>
+    <section class="popup-stats" id="popup-stats" aria-label="Thống kê chặn" hidden>
+      <div class="stat-card"><span class="stat-eyebrow">TRÊN TRANG NÀY</span><strong id="page-count">—</strong><span>lượt chặn</span></div>
+      <div class="stat-card"><span class="stat-eyebrow">TỪ LÚC CÀI ĐẶT</span><strong id="total-count">—</strong><span>lượt chặn</span></div>
+    </section>
+    </div>
+    <section id="statistics-panel" class="statistics-panel" role="tabpanel" aria-labelledby="statistics-tab" hidden>
+      <div class="statistics-controls"><label><span class="sr-only">Nhóm thống kê</span><select id="statistics-category"><option value="all">Tất cả</option><option value="ads">Quảng cáo</option><option value="privacy">Theo dõi</option><option value="security">URL độc hại</option><option value="annoyances">Phiền nhiễu</option><option value="vietnam">Bộ lọc Việt Nam</option><option value="custom">Quy tắc bổ sung</option></select></label><label><span class="sr-only">Khoảng thời gian</span><select id="statistics-range"><option value="7">7 ngày</option><option value="30">30 ngày</option></select></label></div>
+      <p id="statistics-status" class="statistics-note" role="status">Đang tải thống kê…</p>
+      <button id="statistics-reload" class="secondary-button" type="button" hidden>Tải lại Safora</button>
+      <div id="statistics-data" hidden>
+        <p class="statistics-total"><strong id="statistics-total">0</strong><span id="statistics-period">lượt chặn trong 7 ngày</span></p>
+        <div class="statistics-chart"><svg id="statistics-chart" viewBox="0 0 324 140" preserveAspectRatio="none" role="img" aria-labelledby="statistics-chart-title statistics-chart-description"><title id="statistics-chart-title">Lượt chặn theo ngày</title><desc id="statistics-chart-description"></desc><g id="statistics-chart-drawing"></g></svg><div id="statistics-chart-labels" class="statistics-chart-labels" aria-hidden="true"></div></div>
+        <p id="statistics-empty" class="statistics-empty" hidden>Chưa có lượt chặn trong khoảng thời gian này.</p>
+        <ul id="statistics-breakdown" class="statistics-breakdown" aria-label="Lượt chặn theo nhóm"></ul>
+        <p id="statistics-note" class="statistics-note"></p>
+      </div>
+    </section>
+    <p id="native-count-note" class="statistics-note native-count-note" hidden>Xem số lần lọc trên biểu tượng Safora. Số này do trình duyệt tính cho trang hiện tại.</p>
+    <p id="popup-status" class="feedback popup-feedback" role="status" aria-live="polite" hidden></p>
+  </main>
+  <footer class="popup-footer"><span><span class="live-dot" aria-hidden="true"></span>Riêng tư ngay trên thiết bị</span></footer>
+  <script type="module" src="popup.js"></script>
+</body></html>

@@ -1,0 +1,1 @@
+{"plugins":["typescript"],"categories":{"correctness":"error"},"rules":{"no-debugger":"error","no-eval":"error","no-implied-eval":"error","no-unused-vars":"error"}}

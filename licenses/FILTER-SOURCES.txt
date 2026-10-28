@@ -1,0 +1,11 @@
+Filter sources and retained notices
+AdGuard filters: https://github.com/AdguardTeam/AdguardFilters (GPL-3.0)
+ABPVN: https://github.com/abpvn/abpvn (GPL-3.0)
+uAssets Quick fixes: https://github.com/uBlockOrigin/uAssets (GPL-3.0)
+uBlock Badware risks: reviewed network subset from pinned uAssets source; raw source, checksum, GPL-3.0 and exclusions are retained in licenses/ubol/ and filters/ubol-audit-90003.json.
+Malicious URL Blocklist: pinned malware-filter URLhaus HOSTS snapshot (CC0 data, MIT source tooling); raw source and notices in licenses/ubol/, audit in filters/ubol-audit-90004.json. Host scope, not individual URL path scope.
+Safora Việt Nam: authored and ABPVN-adapted site-scoped supplement in src/filters/safora-vietnam.txt (GPL-3.0-only); attribution and source commit retained in filter metadata.
+Safora Web: reviewed native advertising supplement in src/filters/safora-web.txt (GPL-3.0-only); upstream attribution retained in filter metadata.
+Compiled filter text, copyright and individual list notices are retained inside the ruleset metadata.
+This extension uses AdGuard open source libraries and selected uBOL filter sources. It is not an official AdGuard or uBlock Origin Lite product.
+Sources/build instructions are supplied in the Safora source directory.

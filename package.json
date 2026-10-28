@@ -1,0 +1,36 @@
+{
+  "name": "safora",
+  "version": "1.15.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "npm run typecheck && npm run lint && node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint src scripts tests",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "test:browser": "node scripts/browser-test.mjs",
+    "package:webstore": "npm run build && node scripts/package-webstore.mjs",
+    "test:webstore": "node scripts/webstore-browser-test.mjs"
+  },
+  "devDependencies": {
+    "@adguard/dnr-rulesets": "5.0.20261013160024",
+    "@types/chrome": "0.3.6",
+    "@types/node": "26.6.4",
+    "oxlint": "1.87.0",
+    "playwright-core": "1.58.2",
+    "rolldown": "1.2.12",
+    "typescript": "7.0.2"
+  },
+  "dependencies": {
+    "@adguard/agtree": "4.3.0",
+    "@adguard/dnr-converter": "2.0.0",
+    "@adguard/tsurlfilter": "6.0.4",
+    "@adguard/tswebextension": "6.0.1"
+  },
+  "overrides": {
+    "@adguard/scriptlets": {
+      "js-yaml": "3.15.2"
+    }
+  },
+  "license": "GPL-3.0-only"
+}

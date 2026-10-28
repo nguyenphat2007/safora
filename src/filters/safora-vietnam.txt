@@ -1,0 +1,42 @@
+! Title: Safora Việt Nam
+! Description: Small, reviewed site-scoped supplement for Vietnamese publishers.
+! Version: 1.1.0
+! License: GPL-3.0-only
+! TimeUpdated: 2026-10-25
+! Evidence and exclusions: VIETNAM-FILTER-SOURCES.md
+! Maintained as a small supplement; retain the existing AdGuard and ABPVN lists.
+!
+! Safora original publisher-specific cosmetic rules. Public HTML observed 2026-10-24.
+! https://tienphong.vn/ — new SDA ad slots; keep editorial/promotional article links.
+tienphong.vn##.rennab[id^="sdaWeb_"][data-position^="Web_Sda"]
+! https://tuoitre.vn/ — footer ad-zone wrapper, not the surrounding footer.
+tuoitre.vn###BalloonAdsPc
+! https://thanhnien.vn/ — remove the empty outer ad wrapper and its margin.
+thanhnien.vn##.section__topbanner
+!
+! Adapted from ABPVN, Copyright ABPVN, GNU GPLv3.
+! https://github.com/abpvn/abpvn/blob/aef1df1ce8041c4b13c8c05112d9a027fe2d3209/filter/abpvn_adguard.txt
+! Upstream lines 109-110 and 428-430; narrowed to the observed current coiphim.club host.
+! Homepage and both script contents verified 2026-10-24; no whole-CDN or generic-page rules.
+||coiphim.club/client_assets/js/dataview/adsview.js^$script,domain=coiphim.club,~third-party
+||coiphim.club/client_assets/js/minijumb.js^$script,domain=coiphim.club,~third-party
+coiphim.club##.ad-floater
+coiphim.club##.popunder-link
+coiphim.club##.promotion-popup
+
+!
+! Safora original rules from public publisher HTML observed 2026-10-25.
+! Narrow native selectors only; collapse reviewed ad wrappers, not article ancestors.
+! https://tinhte.vn/ — remove the ad-only list item, including its spacer lines.
+tinhte.vn##li.ads-middle
+! https://kenh14.vn/ — ad-only column and floating sidebar wrappers.
+kenh14.vn##aside.kta-ad-col
+kenh14.vn##.ads-left-sidebar
+! https://baotintuc.vn/ and https://www.vietnamplus.vn/ — activated SDA slots.
+baotintuc.vn##.rennab[id^="sdaWeb_"][data-position^="Web_Sda"]
+vietnamplus.vn##.rennab[id^="sdaWeb_"][data-position^="Web_Sda"]
+! https://cafebiz.vn/ — ad-only feed and near-footer wrappers.
+cafebiz.vn##.adstimeline
+cafebiz.vn##.admnearfooter
+! https://baomoi.com/ — ad wrapper siblings of .bm-card; retain the news feed.
+baomoi.com##.ad-banner-list.block

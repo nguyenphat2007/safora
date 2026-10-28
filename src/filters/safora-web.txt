@@ -1,0 +1,42 @@
+! Title: Safora Web
+! Description: Small reviewed native supplement for web advertising components.
+! Version: 1.2.0
+! License: GPL-3.0-only
+! TimeUpdated: 2026-10-26
+! Network hosts adapted from AdGuardFilters; cosmetic rules authored for Safora.
+! Retain the existing Base, Privacy and ABPVN lists and their compatibility exceptions.
+!
+! Adapted from AdGuardFilters, Copyright AdGuard Software Ltd., GNU GPLv3.
+! https://github.com/AdguardTeam/AdguardFilters/blob/a9ae3953807df5219255c1d4fe5d4071b13b07dc/MobileFilter/sections/adservers.txt
+! Source lines 460 and 280; narrowed to third-party advertising resource types.
+! Keep documents, first-party requests, fonts and stylesheets outside this supplement.
+||adsbynimbus.com^$third-party,script,image,xmlhttprequest,subdocument,media,ping
+||tiktokpangle.us^$third-party,script,image,xmlhttprequest,subdocument,media,ping
+!
+! These three native selectors target explicitly advertising AMP components.
+! https://amp.dev/documentation/components/amp-ad
+! https://amp.dev/documentation/components/amp-sticky-ad
+##amp-sticky-ad
+##amp-embed[type="adsense"]
+##amp-embed[type="doubleclick"]
+! Forum-specific advertising billboard; preserve discussion and account controls.
+! Public source: https://forum.lowyat.net/ (reviewed 2026-10-25).
+forum.lowyat.net###LYNBillboard
+!
+! Exact SDA advertising-framework signature, observed on Cong Luan, Tien Phong,
+! Bao Tin Tuc and VietnamPlus; all three markers are required together.
+! Public HTML and BannerManager source reviewed 2026-10-26; never execute ad code.
+! https://congluan.vn/
+! https://common.mcms.one/assets/js/web/common.min-0.1.76.js
+! Existing Vietnam-scoped rules remain independent of generic-hiding exceptions.
+##.rennab[id^="sdaWeb_"][data-position^="Web_Sda"]
+! Current CAND host; do not hide ordinary banners or editorial position markers.
+! https://cand.vn/ (cand.com.vn redirects here; reviewed 2026-10-26).
+cand.vn##.banner[id^="adsWeb_"][data-position^="Web_Ads"]
+! Seven explicitly labelled ad-only asides contain empty ad slots, not articles.
+! https://baoxaydung.vn/ (reviewed 2026-10-26).
+baoxaydung.vn##aside[aria-label="Quảng cáo"]
+! First-party 300x250 carousel linked through /views_ads/{947,970,976}/.
+! Public page and Safora 1.12 live Chrome check: https://baodautu.vn/ (2026-10-26).
+! Exact ID avoids the nearby #ads_share_right10 Facebook embed and editorial content.
+baodautu.vn###ads_share_right1
