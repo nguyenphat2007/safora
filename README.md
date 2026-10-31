@@ -4,7 +4,7 @@ Safora là tiện ích chặn quảng cáo, theo dõi và một số tên miền
 
 Đây là mã nguồn tương ứng của Safora **1.15.1**. `src/`, `public/`, các đầu vào bộ lọc và phiên bản dependency được giữ nguyên từ bản phát hành. Kho này chỉ giữ công cụ dựng, đóng gói và kiểm thử cần thiết; các báo cáo nghiên cứu, so sánh hiệu năng dùng bản đối chiếu cũ, dữ liệu duyệt web thử nghiệm và dự án khác không được đưa vào.
 
-- [Chính sách quyền riêng tư](https://safora-privacy.dark-box-7605.chatgpt.site/)
+- [Chính sách quyền riêng tư](https://github.com/nguyenphat2007/safora/blob/main/PRIVACY.md)
 - [Mã nguồn phiên bản 1.15.1](https://github.com/nguyenphat2007/safora/tree/v1.15.1)
 - Hỗ trợ: **nguyenduyphat0207@gmail.com**
 
